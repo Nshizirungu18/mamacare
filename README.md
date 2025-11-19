@@ -259,3 +259,4 @@ Vite dev server default: `http://localhost:5173`.
 * **CORS issues:** Adjust `cors()` config in `backend/server.js`.
 
 
+
