@@ -6,6 +6,7 @@ import Dashboard from "./pages/Dashboard";
 import Wellness from "./pages/Wellness";
 import Reminders from "./pages/Reminders";
 import Profile from "./pages/Profile";
+import Community from "./pages/Community";
 import PrivateRoute from "./components/PrivateRoute";
 import Navbar from "./components/Navbar.jsx";
 import Clinics from "./pages/Clinics";
@@ -47,6 +48,14 @@ function App() {
           element={
             <PrivateRoute>
               <Profile />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/community"
+          element={
+            <PrivateRoute>
+              <Community />
             </PrivateRoute>
           }
         />

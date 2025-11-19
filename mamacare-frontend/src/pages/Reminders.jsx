@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import api from "../api/api";
 import ReminderCard from "../components/ReminderCard";
+import BackButton from "../components/BackButton";
 
 const Reminders = () => {
   const [reminders, setReminders] = useState([]);
@@ -117,7 +118,11 @@ const Reminders = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 p-6">
-      <h1 className="text-2xl font-bold mb-6">Reminders</h1>
+      <div className="max-w-7xl mx-auto">
+        <div className="mb-4">
+          <BackButton to="/dashboard" />
+        </div>
+        <h1 className="text-2xl font-bold mb-6">Reminders</h1>
 
       {/* Form */}
       <form
@@ -209,6 +214,7 @@ const Reminders = () => {
           ))}
         </div>
       )}
+      </div>
     </div>
   );
 };

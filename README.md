@@ -1,5 +1,14 @@
 # MamaCare
 
+SDG 3: Good Health and Well-being
+Problem: Many expectant mothers lack access to consistent, personalized health guidance and community support.
+
+MamaCare’s Solution:
+Tracks pregnancy progress and wellness logs (hydration, mood, symptoms).
+Offers personalized health tips and reminders.
+Connects users to nearby clinics via maps.
+
+Builds emotional support through community features.
 MamaCare is a full-stack maternal wellness companion that combines a secure Express/MongoDB API with a modern React/Vite frontend. Expectant parents can register, track pregnancy progress, log wellness activities, manage reminders, and discover nearby clinics with interactive mapping.
 
 ---

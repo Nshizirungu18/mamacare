@@ -2,6 +2,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import api from "../api/api"; // your axios instance (baseURL: /api)
 import { useNavigate } from "react-router-dom";
+import BackButton from "../components/BackButton";
 
 /**
  * MamaCare Dashboard (Advanced UI - Option C)
@@ -272,7 +273,11 @@ const Dashboard = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 p-6">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div className="max-w-7xl mx-auto">
+        <div className="mb-4">
+          <BackButton to="/" />
+        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* LEFT: main summary */}
         <div className="lg:col-span-2 space-y-6">
           <div className="bg-white p-6 rounded-lg shadow">
@@ -551,14 +556,15 @@ const Dashboard = () => {
             </div>
           </div>
         </aside>
-      </div>
+        </div>
 
-      {/* Footer note */}
-      <div className="max-w-7xl mx-auto mt-6 text-sm text-gray-500">
-        <p>
-          Note: This information is for guidance only. Always consult your healthcare provider
-          for medical advice.
-        </p>
+        {/* Footer note */}
+        <div className="mt-6 text-sm text-gray-500">
+          <p>
+            Note: This information is for guidance only. Always consult your healthcare provider
+            for medical advice.
+          </p>
+        </div>
       </div>
     </div>
   );

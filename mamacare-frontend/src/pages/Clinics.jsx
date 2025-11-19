@@ -4,6 +4,7 @@ import api from "../api/api"; // axios instance with baseURL '/api'
 import { MapContainer, TileLayer, Marker, Popup, Circle } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
+import BackButton from "../components/BackButton";
 
 // Fix default icon issue in many bundlers
 delete L.Icon.Default.prototype._getIconUrl;
@@ -269,7 +270,11 @@ export default function Clinics() {
 
   return (
     <div className="min-h-screen p-6 bg-gray-50">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div className="max-w-7xl mx-auto">
+        <div className="mb-4">
+          <BackButton to="/" />
+        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Left: Map */}
         <div className="lg:col-span-2">
           <div className="bg-white p-4 rounded shadow mb-4">
@@ -452,6 +457,7 @@ export default function Clinics() {
             )}
           </div>
         </aside>
+        </div>
       </div>
     </div>
   );

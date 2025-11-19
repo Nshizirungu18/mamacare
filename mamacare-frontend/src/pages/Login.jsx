@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../api/api";
 import useAuthStore from "../store/authStore";
+import NotificationPopup from "../components/NotificationPopup";
+import BackButton from "../components/BackButton";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -13,26 +15,54 @@ const Login = () => {
   });
 
   const [error, setError] = useState("");
+  const [showPopup, setShowPopup] = useState(false);
+  const [popupMessage, setPopupMessage] = useState("");
+  const [popupType, setPopupType] = useState("success");
 
   const handleChange = e => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async e => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
+    setShowPopup(false);
+
     try {
       const { data } = await api.post("/users/login", formData);
       setUser(data, data.token);
-      navigate("/dashboard");
+      setPopupMessage("Login successful! Welcome back!");
+      setPopupType("success");
+      setShowPopup(true);
+      setTimeout(() => {
+        navigate("/dashboard");
+      }, 1500);
     } catch (err) {
-      setError(err.response?.data?.message || "Login failed");
+      const errorMsg = err.response?.data?.message || "Login failed. Please check your credentials.";
+      setError(errorMsg);
+      setPopupMessage(errorMsg);
+      setPopupType("error");
+      setShowPopup(true);
     }
   };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
+      <NotificationPopup
+        message={popupMessage}
+        type={popupType}
+        show={showPopup}
+        onClose={() => {
+          setShowPopup(false);
+          setPopupMessage("");
+        }}
+        duration={popupType === "success" ? 1500 : 5000}
+      />
+      
       <div className="w-full max-w-md bg-white p-8 rounded-lg shadow-md">
+        <div className="mb-4">
+          <BackButton to="/" />
+        </div>
         <h2 className="text-2xl font-bold mb-6 text-center">Login</h2>
         {error && <p className="text-red-500 mb-4">{error}</p>}
         <form onSubmit={handleSubmit} className="space-y-4">

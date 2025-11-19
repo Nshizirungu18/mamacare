@@ -12,6 +12,7 @@ const Navbar = () => {
   const privateLinks = useMemo(
     () => [
       { name: "Dashboard", path: "/dashboard" },
+      { name: "Community", path: "/community" },
       { name: "Wellness", path: "/wellness" },
       { name: "Reminders", path: "/reminders" },
       { name: "Clinics", path: "/clinics" },
