@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+/* Global body styles */
+body {
+  font-family: "Inter", "Nunito", sans-serif;
+  background-color: #E0F7FA;
+  color: #1F2937;
+}
+
+/* Headings styled with brand font + trust color */
+h1, h2, h3 {
+  font-family: "Nunito Sans", sans-serif;
+  color: #0D47A1;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  transition: background-color 0.2s, color 0.2s;
+}
+.btn-primary {
+  background-color: #FF6B6B;
+  color: white;
+}
+.btn-primary:hover {
+  background-color: #C44536;
+}
+.btn-secondary {
+  background-color: #00ACC1;
+  color: white;
+}
+.btn-secondary:hover {
+  background-color: #006064;
+}
+
+/* Cards */
+.card {
+  background-color: white;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  border: 1px solid #E0F7FA;
+  padding: 1rem;
+}
+
+/* Inputs */
+.input {
+  width: 100%;
+  border: 1px solid #D1D5DB;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  outline: none;
+}
+.input:focus {
+  outline: none;
+  ring: 2px;
+  ring-color: #2196F3;
+}
