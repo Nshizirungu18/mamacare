@@ -68,7 +68,8 @@ const app = express();
 // Middleware
 const allowedOrigins = [
   "http://localhost:5173",              // local Vite dev server
-  "https://mamacare-theta.vercel.app"   // deployed frontend on Vercel
+  "https://mamacare-theta.vercel.app" ,  // deployed frontend on Vercel
+  "https://mamacare-hp9eqq1k2-enshizirungu18-3419s-projects.vercel.app"
 ];
 
 app.use(cors({
